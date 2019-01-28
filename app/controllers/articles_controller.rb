@@ -63,7 +63,7 @@ class ArticlesController < ApplicationController
 
   def sort_articles
     @articles = Article.where('tags like ?', "%#{params[:sort_str]}%")
-    render "articles/index"
+    render "articles/test"
   end
 
   private
