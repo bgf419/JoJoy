@@ -13,7 +13,8 @@
 
 <p>
   <strong>Tags:</strong>
-  <%= @article.tags %>
+  <% tags = @article.tags %>
+  <%= tags %>
 </p>
 
 <% if current_admin %>
