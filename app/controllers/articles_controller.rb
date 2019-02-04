@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!, only: [:edit, :update, :destroy, :new, :create]
   # GET /articles
   # GET /articles.json
   def index
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to "/sort_articles/#{@article.tags.split(',')[0]}", notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class ArticlesController < ApplicationController
 
   def sort_articles
     @articles = Article.where('tags like ?', "%#{params[:sort_str]}%")
-    render "articles/test"
+    render "articles/sorted_tags"
   end
 
   private

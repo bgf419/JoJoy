@@ -6,8 +6,9 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @article.body %>
+  <strong>Steps:</strong>
+  <% steps = @article.body %>
+  <%= simple_format(steps) %>
 </p>
 
 <p>
@@ -15,5 +16,9 @@
   <%= @article.tags %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<% if current_admin %>
+<%= link_to 'Edit', edit_article_path(@article) %>
+<%= link_to 'Back', :back %>
+<% else %>
+<%= link_to 'Back', :back %>
+<% end %>

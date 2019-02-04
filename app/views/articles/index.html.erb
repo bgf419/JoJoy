@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 <% content_for :title, "The Big List of Happiness" %>
+<%#= link_to "Admin Sign In", new_admin_session_path %>
+<% if current_admin %>
+<%= link_to "Admin Sign Out", destroy_admin_session_path, method: :delete %>
+<% end %>
 
   <h1>The Big List of Happiness Techniques</h1>
 
@@ -14,8 +18,8 @@
               Sort
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="../sort_articles/positive psychology">Positive Psychology</a>
-              <a class="dropdown-item" href="../sort_articles/stoicism">Philosophy</a><br/>
+              <a class="dropdown-item" href="../sort_articles/science">Science</a><br/>
+              <a class="dropdown-item" href="../sort_articles/philosophy">Philosophy</a><br/>
               <a class="dropdown-item" href="../sort_articles/folk">Folk</a>
             </div>
           </div>
@@ -27,12 +31,15 @@
       <% @articles.each do |article| %>
         <tr>
           <td><%= link_to article.name, article %></td>
-          <td><%#= link_to 'Edit', edit_article_path(article) %></td>
-          <td><%#= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if current_admin %>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
 
   <br>
-  <%#= link_to 'New Article', new_article_path %>
+  <% if current_admin %>
+  <%= link_to 'New Article', new_article_path %>
+  <% end %>
