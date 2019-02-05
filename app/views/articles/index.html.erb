@@ -42,4 +42,5 @@
   <br>
   <% if current_admin %>
   <%= link_to 'New Article', new_article_path %>
+  <%= link_to "Delete my account", registration_path(current_admin), data: { confirm: "Are you sure?" }, method: :delete %>
   <% end %>

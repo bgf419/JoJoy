@@ -11,9 +11,9 @@ gem 'rails', '~> 5.2.2'
 # gem 'sqlite3'
 # end
 #postgresql for database
-group :production do
-gem 'pg'
-end
+# group :production do
+# gem 'pg'
+# end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -56,8 +56,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
+gem 'sqlite3'
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
