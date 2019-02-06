@@ -1,5 +1,5 @@
 Admin.create!([
-  {email: "bgf419@gmail.com", encrypted_password: "sleep", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil}
+  {email: "bgf419@gmail.com", encrypted_password: "$2a$11$GTRdJzZVS0e7TPlpFx2iYeah3dZ.14elvXDpmwyE8p4KKgoatt66a", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil}
 ])
 Article.create!([
   {name: "Gratitude Visit", body: "1. Write thank you letter to someone who has been kind to you and hasn't been properly thanked\r\n2. Deliver it to them in person\r\n", tags: "science,positive psychology,martin seligman"},
