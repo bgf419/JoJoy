@@ -59,6 +59,8 @@ default: &default
 development:
   <<: *default
   database: jojoy_dev
+  username: postgres
+  password: sleep
 
 test:
   <<: *default
@@ -71,3 +73,5 @@ staging:
 production:
   <<: *default
   database: jojoy
+  username: postgres
+  password: sleep
