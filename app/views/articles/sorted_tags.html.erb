@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<% tag_name = request.url[36..100].capitalize %>
+<% tag_name = request.url[42..200].capitalize %>
 <% tag_name = tag_name.gsub(/%20/," ") %>
 <% if tag_name.include?(' ') then
 replacement = tag_name[tag_name.index(' ')+1].capitalize
