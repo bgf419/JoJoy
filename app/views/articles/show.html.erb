@@ -14,7 +14,11 @@
 <p>
   <strong>Tags:</strong>
   <% tags = @article.tags %>
-  <%= tags %>
+  <% tag_array = tags.split(',') %>
+  <% tag_array.each do |t| %>
+  <%= link_to t, "https://jojoy.herokuapp.com/sort_articles/#{t}", target: :_blank %>
+  <% end %>
+
 </p>
 
 <% if current_admin %>
