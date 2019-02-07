@@ -16,7 +16,7 @@
   <% tags = @article.tags %>
   <% tag_array = tags.split(',') %>
   <% tag_array.each do |t| %>
-  <%= link_to t, "https://jojoy.herokuapp.com/sort_articles/#{t}", target: :_blank %>
+  <%= link_to t, "https://jojoy.herokuapp.com/sort_articles/#{t}" %>
   <% end %>
 
 </p>
