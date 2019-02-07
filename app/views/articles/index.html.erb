@@ -28,6 +28,7 @@
     </thead>
 
     <tbody>
+      <% @articles = @articles.sort {|a,b| a.name <=> b.name} %>
       <% @articles.each do |article| %>
         <tr>
           <td><%= link_to article.name, article %></td>
